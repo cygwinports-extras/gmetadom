@@ -1,0 +1,123 @@
+gmetadom
+------------------------------------------
+GMetaDOM is a collection of libraries, each library providing a DOM
+implementation. Currently available bindings are for C++ (smart
+pointers).
+
+The basic idea is that, given the availability of DOM implementations
+for the C programming language (like Gdome2), and given the uniformity
+of the DOM interfaces, bindings for various programming languages based
+on the C implementation can be built automatically, providing a small
+number of hand-coded classes and a set of scripts for the automatic
+generation of the remaining ones. 
+
+Runtime requirements:
+  cygwin-1.5.18-1
+  gdome2-0.8.1-1
+  glib2-runtime-2.6.5-1
+  libiconv2-1.9.2-1
+  libintl3-0.14.1-1
+  libxml2-2.6.20-3
+  zlib-1.2.3-1
+
+Build requirements:
+  cygwin-1.5.18-1
+  autoconf2.5-2.59-3
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  gawk-3.1.5-1
+  gcc-core-3.4.4-1
+  gcc-g++-3.4.4-1
+  libtool1.5-1.5.20-1
+  make-3.80-1
+  sed-4.1.4-1
+
+  gdome2-0.8.1-1
+  gettext-0.14.1-1
+  glib2-devel-2.6.5-1
+  libiconv-1.9.2-1
+  libxml2-devel-2.6.20-3
+  zlib-1.2.3-1
+
+Canonical website:
+  http://gmetadom.sourceforge.net/
+
+Canonical download:
+  http://prdownloads.sourceforge.net/gmetadom/
+
+-------------------------------------------
+
+Build instructions:
+  unpack gmetadom-0.2.3-1-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  ./gmetadom-0.2.3-1.sh all
+
+This will create:
+  /usr/src/gmetadom-0.2.3-1-src.tar.bz2
+  /usr/src/gmetadom-0.2.3-1.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/cyggmetadom_gdome_cpp_smart-0.dll
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOM.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMAttr.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMBasic.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMCDATASection.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMChar.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMCharacterData.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMComment.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMCore.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDocument.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDocumentFragment.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDocumentType.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMException.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMImplementation.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMString.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMTimeStamp.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMElement.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEntity.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEntityReference.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEvent.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEventListener.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEvents.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEventTarget.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMGdomeString.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMHelper.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMMutationEvent.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMNamedNodeMap.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMNode.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMNodeList.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMNotation.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMProcessingInstruction.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMText.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMTraits.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUCS4String.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUTF16String.hh
+  /usr/include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUTF8String.hh
+  /usr/lib/libgmetadom_gdome_cpp_smart.dll.a
+  /usr/lib/libgmetadom_gdome_cpp_smart.la
+  /usr/lib/pkgconfig/gdome2-cpp-smart.pc
+  /usr/share/doc/Cygwin/gmetadom-0.2.3.README
+  /usr/share/doc/gmetadom-0.2.3/AUTHORS
+  /usr/share/doc/gmetadom-0.2.3/BUGS
+  /usr/share/doc/gmetadom-0.2.3/ChangeLog
+  /usr/share/doc/gmetadom-0.2.3/COPYING
+  /usr/share/doc/gmetadom-0.2.3/INSTALL
+  /usr/share/doc/gmetadom-0.2.3/LICENSE
+  /usr/share/doc/gmetadom-0.2.3/NEWS
+  /usr/share/doc/gmetadom-0.2.3/README
+
+------------------
+
+Port Notes:
+
+----- version 0.2.3-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
