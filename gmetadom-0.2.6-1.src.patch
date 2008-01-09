@@ -1,0 +1,76 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/gmetadom-0.2.6/src/gdome_caml/Makefile.am src/gmetadom-0.2.6/src/gdome_caml/Makefile.am
+--- origsrc/gmetadom-0.2.6/src/gdome_caml/Makefile.am	2006-08-06 03:33:36.000000000 -0500
++++ src/gmetadom-0.2.6/src/gdome_caml/Makefile.am	2007-10-15 21:59:02.359375000 -0500
+@@ -48,10 +48,10 @@
+ 	$(patsubst %, events/%, $(shell cat $(srcdir)/events/.linkorder))	\
+ 	$(shell cat $(srcdir)/.linkorder)
+ O_S =	\
+-	  $(patsubst basic/%.c, basic/.libs/%.o, $(wildcard basic/ml_*.c))	\
+-	  $(patsubst core/%.c, core/.libs/%.o, $(wildcard core/ml_*.c))	\
+-	  $(patsubst events/%.c, events/.libs/%.o, $(wildcard events/ml_*.c))	\
+-	  $(patsubst %.c, .libs/%.o, $(wildcard ml_*.c))
++	  $(wildcard basic/.libs/ml_*.o) \
++	  $(wildcard core/.libs/ml_*.o) \
++	  $(wildcard events/.libs/ml_*.o) \
++	  $(wildcard .libs/ml_*.o)
+ LO_S = $(patsubst %.o, %.lo, $(O_S))
+ CMA_DEPS = $(LIB_DEPS:%=%.cmo)
+ CMXA_DEPS = $(LIB_DEPS:%=%.cmx)
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/gmetadom-0.2.6/src/gdome_caml/include/Makefile.am src/gmetadom-0.2.6/src/gdome_caml/include/Makefile.am
+--- origsrc/gmetadom-0.2.6/src/gdome_caml/include/Makefile.am	2002-08-30 13:03:36.000000000 -0500
++++ src/gmetadom-0.2.6/src/gdome_caml/include/Makefile.am	2007-10-15 21:59:02.375000000 -0500
+@@ -4,5 +4,5 @@
+ 
+ install-data-local: mlgdomevalue.h
+ 	$(mkinstalldirs) $(OCAMLINSTALLDIR)
+-	$(INSTALL_DATA) $(srcdir)/$< $(OCAMLINSTALLDIR);
++	$(INSTALL_DATA) $< $(OCAMLINSTALLDIR);
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/gmetadom-0.2.6/src/gdome_caml/test/Makefile.am src/gmetadom-0.2.6/src/gdome_caml/test/Makefile.am
+--- origsrc/gmetadom-0.2.6/src/gdome_caml/test/Makefile.am	2005-07-16 11:02:24.000000000 -0500
++++ src/gmetadom-0.2.6/src/gdome_caml/test/Makefile.am	2007-10-15 21:59:02.375000000 -0500
+@@ -49,8 +49,8 @@
+ 
+ test$(EXEEXT) : $(srcdir)/test.ml
+ 	if test ! -e test.cmo -a "x$(srcdir)" != "x." ; then $(LN_S) $< . ; fi
+-	$(OCAMLC) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmo $(C_LIBS) $(OCAML_LIBS) test.ml
++	$(OCAMLC) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmo $(OCAML_LIBS) $(C_LIBS) test.ml
+ 
+ test.opt$(EXEEXT) : $(srcdir)/test.ml
+ 	if test ! -e test.cmo -a "x$(srcdir)" != "x." ; then $(LN_S) $< . ; fi
+-	$(OCAMLOPT) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmx -cclib "$(C_LIBS)" $(OCAMLOPT_LIBS) test.ml
++	$(OCAMLOPT) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmx $(OCAMLOPT_LIBS) test.ml
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/gmetadom-0.2.6/src/gdome_cpp_smart/Makefile.am src/gmetadom-0.2.6/src/gdome_cpp_smart/Makefile.am
+--- origsrc/gmetadom-0.2.6/src/gdome_cpp_smart/Makefile.am	2007-05-08 10:26:17.000000000 -0500
++++ src/gmetadom-0.2.6/src/gdome_cpp_smart/Makefile.am	2007-10-15 21:59:02.375000000 -0500
+@@ -4,13 +4,12 @@
+ lib_LTLIBRARIES = libgmetadom_gdome_cpp_smart.la
+ 
+ libgmetadom_gdome_cpp_smart_la_LIBADD = \
+-  $(GDOME_LIBS) \
+   $(top_builddir)/src/gdome_cpp_smart/events/libevents.la \
+   $(top_builddir)/src/gdome_cpp_smart/core/libcore.la \
+   $(top_builddir)/src/gdome_cpp_smart/basic/libbasic.la \
+-  -lstdc++
++  $(GDOME_LIBS)
+ 
+-libgmetadom_gdome_cpp_smart_la_LDFLAGS = -version-info @GMETADOM_VERSION_INFO@
++libgmetadom_gdome_cpp_smart_la_LDFLAGS = -version-info @GMETADOM_VERSION_INFO@ -no-undefined
+ 
+ libgmetadom_gdome_cpp_smart_la_SOURCES = \
+   GdomeSmartDOMDOMImplementation.cc
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/gmetadom-0.2.6/src/gdome_cpp_smart/test/Makefile.am src/gmetadom-0.2.6/src/gdome_cpp_smart/test/Makefile.am
+--- origsrc/gmetadom-0.2.6/src/gdome_cpp_smart/test/Makefile.am	2007-05-08 10:26:18.000000000 -0500
++++ src/gmetadom-0.2.6/src/gdome_cpp_smart/test/Makefile.am	2007-10-15 21:59:02.609375000 -0500
+@@ -6,10 +6,8 @@
+ deep_SOURCES = deep.cc
+ 
+ LDADDS = \
+-  $(GDOME_LIBS) \
+-  $(top_builddir)/src/gdome_cpp_smart/.libs/libgmetadom_gdome_cpp_smart.a \
+   $(top_builddir)/src/gdome_cpp_smart/libgmetadom_gdome_cpp_smart.la \
+-  -lstdc++
++  $(GDOME_LIBS)
+ 
+ test_LDADD = $(LDADDS)
+ basic_LDADD = $(LDADDS)
