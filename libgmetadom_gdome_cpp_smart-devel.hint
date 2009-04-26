@@ -1,6 +1,7 @@
 category: Gnome
-requires: cygwin gdome2 glib2 libiconv2
-sdesc: "C++ Gdome2 DOM implementation (runtime)"
+requires: cygwin libgmetadom_gdome_cpp_smart0 libgdome-devel libglib2.0-devel libiconv libstdc++6-devel
+external-source: gmetadom
+sdesc: "C++ Gdome2 DOM implementation (development)"
 ldesc: "GMetaDOM is a collection of libraries, each library providing a DOM
 implementation. Currently available bindings are for C++ (smart
 pointers).
