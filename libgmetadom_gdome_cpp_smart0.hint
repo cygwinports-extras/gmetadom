@@ -1,5 +1,5 @@
 category: Gnome
-requires: cygwin libgcc1 libgdome0 libglib2.0_0 libiconv2 libstdc++6
+requires: libgcc1 libgdome0 libglib2.0_0 libiconv2 libstdc++6
 external-source: gmetadom
 sdesc: "C++ Gdome2 DOM implementation (runtime)"
 ldesc: "GMetaDOM is a collection of libraries, each library providing a DOM
