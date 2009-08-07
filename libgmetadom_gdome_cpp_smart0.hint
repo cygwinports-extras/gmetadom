@@ -4,7 +4,7 @@ external-source: gmetadom
 sdesc: "C++ Gdome2 DOM implementation (runtime)"
 ldesc: "GMetaDOM is a collection of libraries, each library providing a DOM
 implementation. Currently available bindings are for C++ (smart
-pointers).
+pointers) and Objective Caml.
 
 The basic idea is that, given the availability of DOM implementations
 for the C programming language (like Gdome2), and given the uniformity

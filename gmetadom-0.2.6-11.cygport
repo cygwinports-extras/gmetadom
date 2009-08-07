@@ -1,4 +1,4 @@
-inherit gnome2 # ocaml
+inherit gnome2 ocaml
 
 DESCRIPTION="GNOME DOM bindings"
 HOMEPAGE="http://gmetadom.sourceforge.net/"
@@ -7,9 +7,9 @@ PATCH_URI="mirror://portage/dev-libs/${PN}/files/${P}-gcc43.patch
            0.2.6-cpp-as-needed.patch
            0.2.6-ocaml-vpath.patch"
 
-PKG_NAMES="${PN} libgmetadom_gdome_cpp_smart0 libgmetadom_gdome_cpp_smart-devel" # ocaml-gdome2"
+PKG_NAMES="${PN} libgmetadom_gdome_cpp_smart0 libgmetadom_gdome_cpp_smart-devel ocaml-gdome2"
 libgmetadom_gdome_cpp_smart0_CONTENTS='usr/bin/*-0.dll usr/share/doc/'
 libgmetadom_gdome_cpp_smart_devel_CONTENTS='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
-#ocaml_gdome2_CONTENTS="${OCAML_LIBDIR#/}"
+ocaml_gdome2_CONTENTS="${OCAML_LIBDIR#/}"
 
 MAKEOPTS+=" -j1"

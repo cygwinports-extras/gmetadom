@@ -31,7 +31,7 @@
  test$(EXEEXT) : $(srcdir)/test.ml
  	if test ! -e test.cmo -a "x$(srcdir)" != "x." ; then $(LN_S) $< . ; fi
 -	$(OCAMLC) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmo $(C_LIBS) $(OCAML_LIBS) test.ml
-+	$(OCAMLC) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmo $(OCAML_LIBS) $(C_LIBS) test.ml
++	$(OCAMLC) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmo -dllpath $(top_builddir)/src/gdome_caml $(OCAML_LIBS) test.ml
  
  test.opt$(EXEEXT) : $(srcdir)/test.ml
  	if test ! -e test.cmo -a "x$(srcdir)" != "x." ; then $(LN_S) $< . ; fi

@@ -2,7 +2,7 @@ gmetadom
 ------------------------------------------
 GMetaDOM is a collection of libraries, each library providing a DOM
 implementation. Currently available bindings are for C++ (smart
-pointers).
+pointers) and Objective Caml.
 
 The basic idea is that, given the availability of DOM implementations
 for the C programming language (like Gdome2), and given the uniformity
@@ -12,23 +12,25 @@ number of hand-coded classes and a set of scripts for the automatic
 generation of the remaining ones. 
 
 Runtime requirements:
-  cygwin-1.7.0-45
+  cygwin-1.7.0-56
   libgcc1-4.3.2-2
   libgdome0-0.8.1-10
-  libglib2.0_0-2.20.1-1
-  libiconv2-1.12-10
+  libglib2.0_0-2.20.4-1
+  libiconv2-1.13-10
   libstdc++6-4.3.2-2
+  ocaml-3.11.1-1
 
 Build requirements:
 (besides corresponding devel packages)
   autoconf2.5-2.63-10
   automake1.9-1.9.6-10
-  binutils-20080624-2
-  cygport-0.9.6-1
+  binutils-2.19.51-1
+  cygport-0.9.8-1
+  flexdll-0.19.169-1
   gawk-3.1.6-2
   gcc4-core-4.3.2-2
   gcc4-g++-4.3.2-2
-  libtool-2.2.7a-12
+  libtool-2.2.7a-14
   make-3.81-2
   pkg-config-0.23b-10
   sed-4.1.5-2
@@ -42,16 +44,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gmetadom-0.2.6-1-src.tar.bz2
+  unpack gmetadom-0.2.6-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gmetadom-0.2.6-1.cygport all
+  cygport ./gmetadom-0.2.6-X.cygport all
 
 This will create:
-  /usr/src/gmetadom-0.2.6-1-src.tar.bz2
-  /usr/src/libgmetadom_gdome_cpp_smart-devel-0.2.6-1.tar.bz2
-  /usr/src/libgmetadom_gdome_cpp_smart0-0.2.6-1.tar.bz2
+  /usr/src/gmetadom-0.2.6-X-src.tar.bz2
+  /usr/src/libgmetadom_gdome_cpp_smart-devel-0.2.6-X.tar.bz2
+  /usr/src/libgmetadom_gdome_cpp_smart0-0.2.6-X.tar.bz2
+  /usr/src/ocaml-gdome2-0.2.6-X.tar.bz2
 
 -------------------------------------------
 
@@ -105,9 +108,128 @@ Files included in the binary packages:
   /usr/lib/libgmetadom_gdome_cpp_smart.la
   /usr/lib/pkgconfig/gdome2-cpp-smart.pc
 
+(ocaml-gdome2)
+  /usr/lib/ocaml/3.11/gdome2/META
+  /usr/lib/ocaml/3.11/gdome2/gdome.cmi
+  /usr/lib/ocaml/3.11/gdome2/gdome.mli
+  /usr/lib/ocaml/3.11/gdome2/gdomeDOMExceptionT.cmi
+  /usr/lib/ocaml/3.11/gdome2/gdomeDOMExceptionT.mli
+  /usr/lib/ocaml/3.11/gdome2/gdomeInit.cmi
+  /usr/lib/ocaml/3.11/gdome2/gdomeInit.cmo
+  /usr/lib/ocaml/3.11/gdome2/gdomeInit.cmx
+  /usr/lib/ocaml/3.11/gdome2/gdomeInit.ml
+  /usr/lib/ocaml/3.11/gdome2/gdomeInit.mli
+  /usr/lib/ocaml/3.11/gdome2/gdomeInit.o
+  /usr/lib/ocaml/3.11/gdome2/gdomeNodeTypeT.cmi
+  /usr/lib/ocaml/3.11/gdome2/gdomeNodeTypeT.mli
+  /usr/lib/ocaml/3.11/gdome2/gdomeT.cmi
+  /usr/lib/ocaml/3.11/gdome2/gdomeT.mli
+  /usr/lib/ocaml/3.11/gdome2/iAttr.cmi
+  /usr/lib/ocaml/3.11/gdome2/iAttr.ml
+  /usr/lib/ocaml/3.11/gdome2/iCDATASection.cmi
+  /usr/lib/ocaml/3.11/gdome2/iCDATASection.ml
+  /usr/lib/ocaml/3.11/gdome2/iCharacterData.cmi
+  /usr/lib/ocaml/3.11/gdome2/iCharacterData.ml
+  /usr/lib/ocaml/3.11/gdome2/iComment.cmi
+  /usr/lib/ocaml/3.11/gdome2/iComment.ml
+  /usr/lib/ocaml/3.11/gdome2/iDOMImplementation.cmi
+  /usr/lib/ocaml/3.11/gdome2/iDOMImplementation.ml
+  /usr/lib/ocaml/3.11/gdome2/iDOMImplementation.mli
+  /usr/lib/ocaml/3.11/gdome2/iDOMString.cmi
+  /usr/lib/ocaml/3.11/gdome2/iDOMString.ml
+  /usr/lib/ocaml/3.11/gdome2/iDocument.cmi
+  /usr/lib/ocaml/3.11/gdome2/iDocument.ml
+  /usr/lib/ocaml/3.11/gdome2/iDocumentFragment.cmi
+  /usr/lib/ocaml/3.11/gdome2/iDocumentFragment.ml
+  /usr/lib/ocaml/3.11/gdome2/iDocumentType.cmi
+  /usr/lib/ocaml/3.11/gdome2/iDocumentType.ml
+  /usr/lib/ocaml/3.11/gdome2/iElement.cmi
+  /usr/lib/ocaml/3.11/gdome2/iElement.ml
+  /usr/lib/ocaml/3.11/gdome2/iEntity.cmi
+  /usr/lib/ocaml/3.11/gdome2/iEntity.ml
+  /usr/lib/ocaml/3.11/gdome2/iEntityReference.cmi
+  /usr/lib/ocaml/3.11/gdome2/iEntityReference.ml
+  /usr/lib/ocaml/3.11/gdome2/iEvent.cmi
+  /usr/lib/ocaml/3.11/gdome2/iEvent.ml
+  /usr/lib/ocaml/3.11/gdome2/iEventTarget.cmi
+  /usr/lib/ocaml/3.11/gdome2/iEventTarget.ml
+  /usr/lib/ocaml/3.11/gdome2/iMutationEvent.cmi
+  /usr/lib/ocaml/3.11/gdome2/iMutationEvent.ml
+  /usr/lib/ocaml/3.11/gdome2/iNamedNodeMap.cmi
+  /usr/lib/ocaml/3.11/gdome2/iNamedNodeMap.ml
+  /usr/lib/ocaml/3.11/gdome2/iNode.cmi
+  /usr/lib/ocaml/3.11/gdome2/iNode.ml
+  /usr/lib/ocaml/3.11/gdome2/iNodeList.cmi
+  /usr/lib/ocaml/3.11/gdome2/iNodeList.ml
+  /usr/lib/ocaml/3.11/gdome2/iNotation.cmi
+  /usr/lib/ocaml/3.11/gdome2/iNotation.ml
+  /usr/lib/ocaml/3.11/gdome2/iProcessingInstruction.cmi
+  /usr/lib/ocaml/3.11/gdome2/iProcessingInstruction.ml
+  /usr/lib/ocaml/3.11/gdome2/iText.cmi
+  /usr/lib/ocaml/3.11/gdome2/iText.ml
+  /usr/lib/ocaml/3.11/gdome2/libmlgdome.a
+  /usr/lib/ocaml/3.11/gdome2/mlgdome.a
+  /usr/lib/ocaml/3.11/gdome2/mlgdome.cma
+  /usr/lib/ocaml/3.11/gdome2/mlgdome.cmxa
+  /usr/lib/ocaml/3.11/gdome2/mlgdomevalue.h
+  /usr/lib/ocaml/3.11/gdome2/mlogdome.a
+  /usr/lib/ocaml/3.11/gdome2/mlogdome.cma
+  /usr/lib/ocaml/3.11/gdome2/mlogdome.cmxa
+  /usr/lib/ocaml/3.11/gdome2/tAttr.cmi
+  /usr/lib/ocaml/3.11/gdome2/tAttr.mli
+  /usr/lib/ocaml/3.11/gdome2/tCDATASection.cmi
+  /usr/lib/ocaml/3.11/gdome2/tCDATASection.mli
+  /usr/lib/ocaml/3.11/gdome2/tCharacterData.cmi
+  /usr/lib/ocaml/3.11/gdome2/tCharacterData.mli
+  /usr/lib/ocaml/3.11/gdome2/tComment.cmi
+  /usr/lib/ocaml/3.11/gdome2/tComment.mli
+  /usr/lib/ocaml/3.11/gdome2/tDOMImplementation.cmi
+  /usr/lib/ocaml/3.11/gdome2/tDOMImplementation.mli
+  /usr/lib/ocaml/3.11/gdome2/tDOMString.cmi
+  /usr/lib/ocaml/3.11/gdome2/tDOMString.mli
+  /usr/lib/ocaml/3.11/gdome2/tDOMTimeStamp.cmi
+  /usr/lib/ocaml/3.11/gdome2/tDOMTimeStamp.mli
+  /usr/lib/ocaml/3.11/gdome2/tDocument.cmi
+  /usr/lib/ocaml/3.11/gdome2/tDocument.mli
+  /usr/lib/ocaml/3.11/gdome2/tDocumentFragment.cmi
+  /usr/lib/ocaml/3.11/gdome2/tDocumentFragment.mli
+  /usr/lib/ocaml/3.11/gdome2/tDocumentType.cmi
+  /usr/lib/ocaml/3.11/gdome2/tDocumentType.mli
+  /usr/lib/ocaml/3.11/gdome2/tElement.cmi
+  /usr/lib/ocaml/3.11/gdome2/tElement.mli
+  /usr/lib/ocaml/3.11/gdome2/tEntity.cmi
+  /usr/lib/ocaml/3.11/gdome2/tEntity.mli
+  /usr/lib/ocaml/3.11/gdome2/tEntityReference.cmi
+  /usr/lib/ocaml/3.11/gdome2/tEntityReference.mli
+  /usr/lib/ocaml/3.11/gdome2/tEvent.cmi
+  /usr/lib/ocaml/3.11/gdome2/tEvent.mli
+  /usr/lib/ocaml/3.11/gdome2/tEventListener.cmi
+  /usr/lib/ocaml/3.11/gdome2/tEventListener.mli
+  /usr/lib/ocaml/3.11/gdome2/tEventTarget.cmi
+  /usr/lib/ocaml/3.11/gdome2/tEventTarget.mli
+  /usr/lib/ocaml/3.11/gdome2/tMutationEvent.cmi
+  /usr/lib/ocaml/3.11/gdome2/tMutationEvent.mli
+  /usr/lib/ocaml/3.11/gdome2/tNamedNodeMap.cmi
+  /usr/lib/ocaml/3.11/gdome2/tNamedNodeMap.mli
+  /usr/lib/ocaml/3.11/gdome2/tNode.cmi
+  /usr/lib/ocaml/3.11/gdome2/tNode.mli
+  /usr/lib/ocaml/3.11/gdome2/tNodeList.cmi
+  /usr/lib/ocaml/3.11/gdome2/tNodeList.mli
+  /usr/lib/ocaml/3.11/gdome2/tNotation.cmi
+  /usr/lib/ocaml/3.11/gdome2/tNotation.mli
+  /usr/lib/ocaml/3.11/gdome2/tProcessingInstruction.cmi
+  /usr/lib/ocaml/3.11/gdome2/tProcessingInstruction.mli
+  /usr/lib/ocaml/3.11/gdome2/tText.cmi
+  /usr/lib/ocaml/3.11/gdome2/tText.mli
+  /usr/lib/ocaml/3.11/stublibs/dllmlgdome.so
+  /usr/lib/ocaml/3.11/stublibs/dllmlgdome.so.owner
+
 ------------------
 
 Port Notes:
+
+----- version 0.2.6-11 -----
+Added the OCaml bindings.
 
 ----- version 0.2.6-10 -----
 Initial release for Cygwin 1.7.

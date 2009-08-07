@@ -1,10 +1,10 @@
 category: Gnome OCaml
-requires: gdome2 glib2 ocaml
+requires: libgcc1 libgdome-devel libglib2.0-devel ocaml
 external-source: gmetadom
 sdesc: "OCaml Gdome2 DOM implementation"
 ldesc: "GMetaDOM is a collection of libraries, each library providing a DOM
 implementation. Currently available bindings are for C++ (smart
-pointers).
+pointers) and Objective Caml.
 
 The basic idea is that, given the availability of DOM implementations
 for the C programming language (like Gdome2), and given the uniformity
