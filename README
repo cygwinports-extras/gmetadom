@@ -13,27 +13,27 @@ generation of the remaining ones.
 
 Runtime requirements:
   cygwin-1.7.1-1
-  libgcc1-4.3.4-3
+  libgcc1-4.5.0-1
   libgdome0-0.8.1-10
   libglib2.0_0-2.22.4-2
   libiconv2-1.13.1-1
-  libstdc++6-4.3.4-3
-  ocaml-3.11.2-1
+  libstdc++6-4.5.0-1
+  ocaml-base-3.12.0-4
 
 Build requirements:
 (besides corresponding devel packages)
   autoconf2.5-2.65-1
   automake1.9-1.9.6-10
-  binutils-2.19.51-1
-  cygport-0.9.80-1
-  flexdll-0.22-1
+  binutils-2.20.51-2
+  cygport-0.10.0-1
+  flexdll-0.25-1
   gawk-3.1.7-1
-  gcc4-core-4.3.4-3
-  gcc4-g++-4.3.4-3
+  gcc4-core-4.5.0-1
+  gcc4-g++-4.5.0-1
   libtool-2.2.7a-15
   make-3.81-2
   pkg-config-0.23b-10
-  sed-4.1.5-2
+  sed-4.2.1-1
 
 Canonical website:
   http://gmetadom.sourceforge.net/
@@ -59,6 +59,9 @@ This will create:
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.2.6-13 -----
+Rebuilt for ocaml-3.12.0.
 
 ----- version 0.2.6-12 -----
 Rebuilt for ocaml-3.11.2.

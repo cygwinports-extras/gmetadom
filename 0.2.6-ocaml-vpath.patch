@@ -24,16 +24,3 @@
 -	$(INSTALL_DATA) $(srcdir)/$< $(OCAMLINSTALLDIR);
 +	$(INSTALL_DATA) $< $(OCAMLINSTALLDIR);
  
---- origsrc/gmetadom-0.2.6/src/gdome_caml/test/Makefile.am	2005-07-16 11:02:24.000000000 -0500
-+++ src/gmetadom-0.2.6/src/gdome_caml/test/Makefile.am	2007-10-15 21:59:02.375000000 -0500
-@@ -49,8 +49,8 @@
- 
- test$(EXEEXT) : $(srcdir)/test.ml
- 	if test ! -e test.cmo -a "x$(srcdir)" != "x." ; then $(LN_S) $< . ; fi
--	$(OCAMLC) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmo $(C_LIBS) $(OCAML_LIBS) test.ml
-+	$(OCAMLC) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmo -dllpath $(top_builddir)/src/gdome_caml $(OCAML_LIBS) test.ml
- 
- test.opt$(EXEEXT) : $(srcdir)/test.ml
- 	if test ! -e test.cmo -a "x$(srcdir)" != "x." ; then $(LN_S) $< . ; fi
--	$(OCAMLOPT) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmx -cclib "$(C_LIBS)" $(OCAMLOPT_LIBS) test.ml
-+	$(OCAMLOPT) -o $@ $(OCAML_FLAGS) -cclib "$(GDOME_LIBS)" gdomeInit.cmx $(OCAMLOPT_LIBS) test.ml

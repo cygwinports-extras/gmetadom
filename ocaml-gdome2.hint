@@ -1,5 +1,5 @@
 category: Gnome OCaml
-requires: libgcc1 libgdome-devel libglib2.0-devel ocaml
+requires: libgdome0 libgdome-devel libglib2.0-devel ocaml-base
 external-source: gmetadom
 sdesc: "OCaml Gdome2 DOM implementation"
 ldesc: "GMetaDOM is a collection of libraries, each library providing a DOM
